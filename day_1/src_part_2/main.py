@@ -16,7 +16,6 @@ def get_password(dial_move_list: list[str], full_dial: list[int], dial_start: in
 
         elif direction == "L":
             new_pos = current_position - steps
-            # normalize negative positions
             zero_hits += ((current_position + size - 1) // size) - ((new_pos + size - 1) // size)
             current_position = new_pos % size
 
@@ -26,7 +25,7 @@ def main():
     full_dial: list[int] = [n for n in range(0, 100)]
     dial_start: int = 50
     
-    #expected result 3
+    #expected result 6
     test_move_list: list[str] = ['L68', 'L30', 'R48', 'L5', 'R60', 'L55', 'L1', 'L99', 'R14', 'L82']
     
     move_list: list[str] = list_of_movements
